@@ -49,11 +49,11 @@ public class FripperController : MonoBehaviour
         }
 
         //Sキーまたは下矢印キーを押した時は同時
-        if (Input.GetKeyDown(KeyCode.S) && tag == "RightFripperTag && LeftFripperTag")
+        if (Input.GetKeyDown(KeyCode.S) && tag == "RightFripperTag" || Input.GetKeyDown(KeyCode.S) && tag == "LeftFripperTag")
         {
             SetAngle(this.flickAngle);
         }
-        if (Input.GetKeyDown(KeyCode.DownArrow) && tag == "RightFripperTag && LeftFripperTag")
+        if (Input.GetKeyDown(KeyCode.DownArrow) && tag == "RightFripperTag" || Input.GetKeyDown(KeyCode.DownArrow) && tag == "LeftFripperTag")
         {
             SetAngle(this.flickAngle);
         }
@@ -75,11 +75,11 @@ public class FripperController : MonoBehaviour
         {
             SetAngle(this.defaultAngle);
         }
-        if (Input.GetKeyUp(KeyCode.S) && tag == "RightFripperTag && LeftFripperTag")
+        if (Input.GetKeyUp(KeyCode.S) && tag == "RightFripperTag" || Input.GetKeyUp(KeyCode.S) && tag == "LeftFripperTag")
         {
             SetAngle(this.defaultAngle);
         }
-        if (Input.GetKeyUp(KeyCode.DownArrow) && tag == "RightFripperTag && LeftFripperTag")
+        if (Input.GetKeyUp(KeyCode.DownArrow) && tag == "RightFripperTag" || Input.GetKeyUp(KeyCode.DownArrow) && tag == "LeftFripperTag")
         {
             SetAngle(this.defaultAngle);
         }
