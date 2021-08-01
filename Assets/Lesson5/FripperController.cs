@@ -67,32 +67,30 @@ public class FripperController : MonoBehaviour
 
 
             // 座標xがスクリーンの2分の1以上の場合
-            if (Input.mousePosition.x >= Screen.width / 2)
+            if (Input.mousePosition.x <= Screen.width / 2)
             {
-                // 右側をタップしたら左のフリッパーが動く
+                // 左フリッパーが動く
                 if (touch.phase == TouchPhase.Began && tag == "LeftFripperTag")
                 {
                     SetAngle(this.flickAngle);
                 }
-                //離された時フリッパーを元に戻す
-                if (touch.phase == TouchPhase.Began && tag == "LeftFripperTag")
-                {
-                    SetAngle(this.defaultAngle);
-                }
-            }
-            else
-            {
-                // 左側をタップしたら左のフリッパーが動く
-                if (touch.phase == TouchPhase.Began && tag == "RightFripperTag")
-                {
-                    SetAngle(this.flickAngle);
-                }
-                //離された時フリッパーを元に戻す
-                if (touch.phase == TouchPhase.Began && tag == "RightFripperTag")
+                if (touch.phase == TouchPhase.Ended && tag == "LeftFripperTag")
                 {
                     SetAngle(this.defaultAngle);
                 }
 
+            }
+            else
+            {
+                // 右フリッパーが動く
+                if (touch.phase == TouchPhase.Began && tag == "RightFripperTag")
+                {
+                    SetAngle(this.flickAngle);
+                }
+                if (touch.phase == TouchPhase.Ended && tag == "RightFripperTag")
+                {
+                    SetAngle(this.defaultAngle);
+                }
             }
 
         }
