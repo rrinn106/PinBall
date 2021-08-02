@@ -93,9 +93,18 @@ public class FripperController : MonoBehaviour
                 }
             }
 
+            if (touch.phase == TouchPhase.Began)
+            {
+                SetAngle(this.flickAngle);
+            }
+            if (touch.phase == TouchPhase.Ended)
+            {
+                SetAngle(this.defaultAngle);
+            }
         }
-
     }
+
+
 
 //フリッパーの傾きを設定
 public void SetAngle(float angle)
